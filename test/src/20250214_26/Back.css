@@ -1,0 +1,43 @@
+.weather-container {
+    position: relative;
+    width: 200px; /* 필요에 따라 조정 */
+    height: 200px; /* 필요에 따라 조정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle {
+    width: 60px; /* 원의 크기 */
+    height: 60px; /* 원의 크기 */
+    border-radius: 50%;
+    position: absolute;
+    animation: moveCircle 5s infinite; /* 애니메이션 지속 시간 및 반복 설정 */
+  }
+  
+  @keyframes moveCircle {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(50px, -50px);
+    }
+    50% {
+      transform: translate(0, 50px);
+    }
+    75% {
+      transform: translate(-50px, -50px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  .temperature {
+    font-size: 24px; /* 온도 텍스트 크기 */
+    font-weight: bold; /* 텍스트 두께 */
+    color: black; /* 텍스트 색상 */
+    position: relative; /* 온도 텍스트의 위치 조정 */
+    z-index: 1; /* 원 위에 위치하도록 설정 */
+  }
+  

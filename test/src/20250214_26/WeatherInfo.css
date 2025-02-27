@@ -1,0 +1,350 @@
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.w_contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+.w_contents>h3 {
+    margin-bottom: 2rem;
+}
+
+.today {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+.today h2 {
+    font-size: calc(1.5rem + 1vw);
+}
+
+.temperature {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.temp {
+    font-size: 1.5rem;
+}
+
+.icon {
+    object-fit: contain;
+    width: auto;
+    height: 100px;
+    margin-bottom: 5px;
+}
+
+.w_info {
+    display: flex;
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+.w_info>p:not(:last-child) {
+    margin-right: 1rem;
+}
+
+button {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1),
+        -4px -4px 10px rgba(255, 255, 255, 0.9);
+    transition: 0.3s;
+    gap: 24px;
+}
+
+button:hover {
+    background-color: #f0f0f0;
+}
+
+.f_days {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 54px;
+    padding: 0 8px;
+}
+
+.f_days .mo {
+    color: #868686;
+}
+
+.f_days .mo::after {
+    content: '/';
+    width: 1px;
+    margin: 0 12px;
+}
+
+.f_days .i_days {
+    object-fit: contain;
+    width: auto;
+    height: 100px;
+}
+
+.f_days .af {
+    color: #333;
+}
+
+.f_days .days {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.temperature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.g_circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, red, orange, yellow, green, blue, purple);
+    animation: gradient-animation 2s infinite, rotate-animation 5s infinite;
+    position: relative;
+    filter: blur(5px);
+}
+
+.t_circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #f5f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 4px;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes rotate-animation {
+    0% {
+        transform: rotate(0deg) scale(0.9);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(0.9);
+    }
+}
+
+.no-info {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    background: #f2f3f7;
+    box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),
+        3px 3px 5px rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    color: #222;
+}
+
+.toggle:hover {
+    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1),
+        inset 3px 3px 5px rgba(0, 0, 0, 0.07);
+    /* box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF; */
+}
+
+.toggle.active {
+    background: #222;
+    box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.5),
+        inset 3px 3px 5px rgba(255, 255, 255, 0.07);
+    color: white;
+}
+
+@media screen and (max-width:1000px) {
+    .w_contents {
+        margin-top: 4rem;
+        padding: 1rem;
+    }
+
+    .w_contents>h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    /* today */
+    .today {
+        margin-bottom: 4rem;
+    }
+
+    .today h2 {
+        font-size: 1.5rem;
+    }
+
+    /* temperature */
+    .temperature {
+        flex-direction: column;
+        margin: 15px 0;
+    }
+
+    .temp {
+        font-size: 1.2rem;
+    }
+
+    .icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* w_info */
+    .w_info {
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .w_info>p:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    /* button */
+    button {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    /* f_days */
+    .f_days {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .f_days .f_card {
+        width: 100%;
+    }
+
+    .f_days .f_card .days {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        padding: 8px 32px;
+        background-color: #f0f0f0;
+        border-radius: 60px;
+        border-bottom: 1px solid #ddd;
+        box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    }
+
+    .f_days .f_card .days .i_days {
+        margin-right: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .f_days .days p {
+        flex: 1;
+        margin: 0;
+        text-align: start;
+    }
+
+    .f_days .f_card .f_temp {
+        display: flex;
+        justify-content: end;
+        width: 35%;
+        font-size: calc(0.5rem + 1vw);
+    }
+
+
+    /* g_circle, t_circle */
+    .g_circle,
+    .t_circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .t_circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .toggle {
+        width: 120px;
+        height: 50px;
+    }
+
+}
+
+@media screen and (max-width:400px){
+    .f_days{
+        width: 100%;
+        padding: 16px 0;
+    }
+    .f_days .f_card {
+        width: 100%;
+
+    }
+    .f_days .f_card .days {
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #f0f0f0;
+        border-radius:50px;
+        box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    }
+    .f_days .f_card .days p{
+        font-size: calc(0.6rem + 1vw);
+    }
+    .f_days .f_card .days .i_days{
+        margin-right: 0;
+    }
+    .f_days .f_card .f_temp {
+        width: 100%;
+        justify-content: center;
+    }
+}
